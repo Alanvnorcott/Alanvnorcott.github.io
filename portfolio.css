@@ -33,6 +33,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-right: 5px; /* Adjust the margin to shift the buttons to the left */
 }
 
 nav ul li {
@@ -48,5 +49,41 @@ nav ul li a {
 
 main {
     margin-top: 60px;
-    padding: 21px;
+    padding: 20px;
+    max-width: 1200px; /* Set a maximum width for the content area */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Style for different sections */
+section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    position: relative;
+}
+
+.profile-image {
+    max-width: 100%; /* Ensure image doesn't exceed its container's width */
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 50%; /* Makes the image round */
+    position: absolute;
+    top: 25%;
+    right: 20px; /* Adjust the distance from the right edge */
+    transform: translateY(-50%);
+}
+
+.bio-section, .projects-section, .connect-section {
+    overflow-y: auto;
 }
