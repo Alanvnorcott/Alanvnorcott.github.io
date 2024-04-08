@@ -1,44 +1,33 @@
 /* portfolio.css */
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #1e1e1e;
+    color: #fff;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+    background-color: #007bff;
+    padding: 20px 0;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 header h1 {
     margin: 0;
     padding: 0;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 36px;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    margin-right: 5px; /* Adjust the margin to shift the buttons to the left */
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -48,42 +37,87 @@ nav ul li a {
 }
 
 main {
-    margin-top: 60px;
     padding: 20px;
-    max-width: 1200px; /* Set a maximum width for the content area */
-    margin: 0 auto; /* Center the content horizontally */
 }
 
-/* Style for different sections */
-section {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-}
-
+/* Hero Section Styles */
 .hero {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #007bff;
-    color: #fff;
-    position: relative;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center items horizontally */
 }
 
 .profile-image {
-    max-width: 100%; /* Ensure image doesn't exceed its container's width */
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    border-radius: 50%; /* Makes the image round */
-    position: absolute;
-    top: 25%;
-    right: 20px; /* Adjust the distance from the right edge */
-    transform: translateY(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
-.bio-section, .projects-section, .connect-section {
-    overflow-y: auto;
+.heading-section h2 {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: 40px; /* Increase font size */
+    align-self: flex-start; /* Align to the start of the flex container */
+}
+
+.button-section {
+    margin-top: 20px; /* Add space between heading and button */
+    text-align: center; /* Center the button horizontally */
+}
+
+.section-content {
+    align-self: flex-start; /* Align content to the start of the flex container */
+}
+
+/* Contact Button Styles */
+.contact-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff; /* Set initial text color to white */
+    border: none;
+    position: relative; /* Add position relative for absolute positioning of pseudo-element */
+    transition: color 0.3s; /* Add transition for text color change */
+    display: block; /* Change button to a block-level element */
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
+    text-align: center; /* Align text to center within the button */
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 40px);
+    height: 0;
+    background-color: #007bff; /* Color of the expanded box */
+    border-radius: 10px; /* Adjust the border-radius to match the button */
+    transition: height 0.3s; /* Add transition for the expansion effect */
+    z-index: -1; /* Place the box behind the text */
+}
+
+.contact-button:hover::before {
+    height: 100%; /* Expand the box to cover the button */
+}
+
+.contact-button:hover {
+    color: #000; /* Change text color to black on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
 }
