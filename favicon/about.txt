@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Kurale
-- Font Author: Copyright 2013 The Kurale Project Authors (edu@tipo.net.ar)
-- Font Source: https://fonts.gstatic.com/s/kurale/v11/4iCs6KV9e9dXjho6eAT3v02QFg.ttf
+- Font Title: Libre Bodoni
+- Font Author: Copyright 2012 The Libre Bodoni Project Authors (https://github.com/googlefonts/Libre-Bodoni/)
+- Font Source: https://fonts.gstatic.com/s/librebodoni/v5/_Xm--H45qDWDYULr5OfyZudXzSBgY2oMBGte6I1fwWzZcOb3U3s.ttf
 - Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

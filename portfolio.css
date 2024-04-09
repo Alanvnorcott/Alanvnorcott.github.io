@@ -4,14 +4,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e;
+    background-color: #46211A;
     color: #fff;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #F1D3B2;
     padding: 20px 0;
     text-align: center;
+    position: relative; /* Add position relative */
 }
 
 header h1 {
@@ -20,13 +21,31 @@ header h1 {
     font-size: 36px;
 }
 
+.navbar-left {
+    position: absolute; /* Position the left navigation absolutely */
+    left: 10px; /* Adjust left position as needed */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+}
+
+.navbar-left li {
+    margin-right: 10px; /* Add some spacing between items */
+}
+
+.navbar-left li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex; /* Change display to flex */
+    justify-content: flex-end; /* Align items to the right */
 }
 
 nav ul li {
-    display: inline;
     margin: 0 10px;
 }
 
@@ -35,6 +54,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 main {
     padding: 20px;
@@ -46,7 +66,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Align content to the top */
-    align-items: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items to the left */
 }
 
 .profile-image {
@@ -56,34 +76,36 @@ main {
 }
 
 .heading-section h2 {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    font-size: 40px; /* Increase font size */
+    margin: 20px 0 0; /* Adjust margin to move the heading down slightly */
+    padding: 350px; /* Remove default padding */
+    font-size: 60px; /* Increase font size */
     align-self: flex-start; /* Align to the start of the flex container */
+    text-align: left; /* Align text to the left */
 }
+
 
 .button-section {
     margin-top: 20px; /* Add space between heading and button */
-    text-align: center; /* Center the button horizontally */
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Move the button to the vertical center of its container */
+    left: 50%; /* Move the button to the horizontal center of its container */
+    transform: translate(-50%, -50%); /* Adjust to center the button both horizontally and vertically */
 }
 
 .section-content {
     align-self: flex-start; /* Align content to the start of the flex container */
 }
 
+
+
 /* Contact Button Styles */
 .contact-button {
-    margin-top: 20px;
+    display: block; /* Make the button a block-level element */
     padding: 10px 20px;
     background-color: transparent;
     color: #fff; /* Set initial text color to white */
     border: none;
-    position: relative; /* Add position relative for absolute positioning of pseudo-element */
     transition: color 0.3s; /* Add transition for text color change */
-    display: block; /* Change button to a block-level element */
-    margin-left: auto; /* Center the button horizontally */
-    margin-right: auto; /* Center the button horizontally */
-    text-align: center; /* Align text to center within the button */
 }
 
 .contact-button::before {
@@ -94,7 +116,7 @@ main {
     transform: translateX(-50%);
     width: calc(100% + 40px);
     height: 0;
-    background-color: #007bff; /* Color of the expanded box */
+    background-color: #F1D3B2; /* Color of the expanded box */
     border-radius: 10px; /* Adjust the border-radius to match the button */
     transition: height 0.3s; /* Add transition for the expansion effect */
     z-index: -1; /* Place the box behind the text */
@@ -108,9 +130,20 @@ main {
     color: #000; /* Change text color to black on hover */
 }
 
+.github-icon img {
+    width: 80px; /* Adjust the width as needed */
+    height: 80px; /* Adjust the height as needed */
+}
+
+.twitter-icon img {
+    width: 80px; /* Adjust the width as needed */
+    height: 80px; /* Adjust the height as needed */
+}
+
+
 /* Footer Styles */
 footer {
-    background-color: #007bff;
+    background-color: #F1D3B2;
     color: #fff;
     text-align: center;
     padding: 20px 0;

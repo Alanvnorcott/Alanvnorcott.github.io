@@ -1,34 +1,34 @@
 "use strict";
 //portfolio.ts
 document.addEventListener('DOMContentLoaded', function () {
-    // Hide all sections except the home section initially
-    var sections = document.querySelectorAll('main section:not(#home)');
-    sections.forEach(function (section) {
-        section.style.display = 'none';
-    });
-    // Handle navigation clicks
-    var navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            var _a;
-            event.preventDefault();
-            var targetId = (_a = link.getAttribute('href')) !== null && _a !== void 0 ? _a : null; // Use nullish coalescing operator (??)
-            var targetSection = document.getElementById(targetId); // Assert type
-            // Safely handle the possibility of targetId and targetSection being null
-            if (targetId && targetSection) { // Check both targetId and targetSection before proceeding
-                // Hide all sections except the target section
-                sections.forEach(function (section) {
-                    if (section !== targetSection) {
-                        section.style.display = 'none';
-                    }
-                });
-                // Show the target section
-                targetSection.style.display = 'block';
-            }
-            else {
-                console.error("Element with ID ".concat(targetId, " not found at all."));
+    // Function to hide all sections except the target section
+    function hideSections(targetSection) {
+        var sections = document.querySelectorAll('main section:not(#home)');
+        sections.forEach(function (section) {
+            if (section !== targetSection) {
+                section.style.display = 'none';
             }
         });
-    });
+    }
+    // Get the buttons for navigation
+    var aboutButton = document.getElementById('about-button');
+    var projectsButton = document.getElementById('projects-button');
+    var contactButton = document.getElementById('contact-button');
+    // Add click event listeners to the buttons
+    if (aboutButton) {
+        aboutButton.addEventListener('click', function () {
+            window.location.href = 'about.html'; // Navigate to the about page
+        });
+    }
+    if (projectsButton) {
+        projectsButton.addEventListener('click', function () {
+            window.location.href = 'projects.html'; // Navigate to the projects page
+        });
+    }
+    if (contactButton) {
+        contactButton.addEventListener('click', function () {
+            window.location.href = 'contact.html'; // Navigate to the contact page
+        });
+    }
 });
 //# sourceMappingURL=portfolio.js.map
