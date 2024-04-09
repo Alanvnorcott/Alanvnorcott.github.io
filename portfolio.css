@@ -1,4 +1,5 @@
 /* portfolio.css */
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -12,24 +13,35 @@ header {
     background-color: #F1D3B2;
     padding: 20px 0;
     text-align: center;
-    position: relative; /* Add position relative */
 }
 
 header h1 {
     margin: 0;
     padding: 0;
-    font-size: 36px;
+    font-size: 2.25rem; /* Relative font size */
 }
 
+/* Adjust the margin-right for .navbar-left */
 .navbar-left {
-    position: absolute; /* Position the left navigation absolutely */
-    left: 10px; /* Adjust left position as needed */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Pushes the icons to the far left */
 }
 
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Pushes the items to the far right */
+}
+
+
+/* Remove the margin-right for .navbar-left li */
 .navbar-left li {
-    margin-right: 10px; /* Add some spacing between items */
+    margin-right: 10px; /* Add margin between items */
+}
+
+.navbar-left li:last-child {
+    margin-right: 0; /* Remove margin from last item */
 }
 
 .navbar-left li a {
@@ -37,12 +49,24 @@ header h1 {
     text-decoration: none;
 }
 
+header {
+    background-color: #F1D3B2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.25rem; /* Relative font size */
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Change display to flex */
-    justify-content: flex-end; /* Align items to the right */
+    display: flex;
+    justify-content: center; /* Center the navigation items horizontally */
 }
 
 nav ul li {
@@ -56,6 +80,7 @@ nav ul li a {
 }
 
 
+
 main {
     padding: 20px;
 }
@@ -65,47 +90,30 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    align-items: flex-start; /* Align items to the left */
-}
-
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .heading-section h2 {
-    margin: 20px 0 0; /* Adjust margin to move the heading down slightly */
-    padding: 350px; /* Remove default padding */
-    font-size: 60px; /* Increase font size */
-    align-self: flex-start; /* Align to the start of the flex container */
-    text-align: left; /* Align text to the left */
+    margin-top: 20px; /* Add margin-top */
+    font-size: 3.75rem; /* Relative font size */
+    text-align: left;
 }
-
 
 .button-section {
-    margin-top: 20px; /* Add space between heading and button */
-    position: absolute; /* Set position to absolute */
-    top: 50%; /* Move the button to the vertical center of its container */
-    left: 50%; /* Move the button to the horizontal center of its container */
-    transform: translate(-50%, -50%); /* Adjust to center the button both horizontally and vertically */
+    margin-top: 20px;
+    display: flex; /* Change to flexbox */
+    justify-content: center; /* Center horizontally */
 }
-
-.section-content {
-    align-self: flex-start; /* Align content to the start of the flex container */
-}
-
-
 
 /* Contact Button Styles */
 .contact-button {
-    display: block; /* Make the button a block-level element */
     padding: 10px 20px;
     background-color: transparent;
-    color: #fff; /* Set initial text color to white */
+    color: #fff;
     border: none;
-    transition: color 0.3s; /* Add transition for text color change */
+    transition: color 0.3s;
+    position: relative; /* Add position relative */
 }
 
 .contact-button::before {
@@ -116,30 +124,25 @@ main {
     transform: translateX(-50%);
     width: calc(100% + 40px);
     height: 0;
-    background-color: #F1D3B2; /* Color of the expanded box */
-    border-radius: 10px; /* Adjust the border-radius to match the button */
-    transition: height 0.3s; /* Add transition for the expansion effect */
-    z-index: -1; /* Place the box behind the text */
+    background-color: #F1D3B2;
+    border-radius: 10px;
+    transition: height 0.3s;
+    z-index: -1;
 }
 
 .contact-button:hover::before {
-    height: 100%; /* Expand the box to cover the button */
+    height: 100%;
 }
 
 .contact-button:hover {
-    color: #000; /* Change text color to black on hover */
+    color: #000;
 }
 
-.github-icon img {
-    width: 80px; /* Adjust the width as needed */
-    height: 80px; /* Adjust the height as needed */
-}
-
+.github-icon img,
 .twitter-icon img {
-    width: 80px; /* Adjust the width as needed */
-    height: 80px; /* Adjust the height as needed */
+    width: 5rem; /* Relative width */
+    height: 5rem; /* Relative height */
 }
-
 
 /* Footer Styles */
 footer {
@@ -151,6 +154,6 @@ footer {
 
 @media only screen and (max-width: 768px) {
     header h1 {
-        font-size: 24px;
+        font-size: 1.5rem; /* Relative font size */
     }
 }
