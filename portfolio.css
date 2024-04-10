@@ -140,8 +140,8 @@ main {
 
 .github-icon img,
 .twitter-icon img {
-    width: 5rem; /* Relative width */
-    height: 5rem; /* Relative height */
+    width: 3rem; /* Relative width */
+    height: 3rem; /* Relative height */
 }
 
 /* Footer Styles */
