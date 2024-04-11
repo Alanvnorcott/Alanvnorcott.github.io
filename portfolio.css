@@ -13,25 +13,27 @@ header {
     background-color: #121212;
     padding: 2rem 0; /* Adjusted padding */
     text-align: center;
-    margin-right: 40rem;
-    margin-top: 7rem;
+    display: flex;
+    flex-direction: column; /* Adjusted layout to column */
+    align-items: flex-start; /* Adjusted layout */
+    margin: 7rem auto 0; /* Adjusted margin */
+    max-width: 50rem; /* Added max-width to prevent header from stretching too wide */
 }
 
 header h1 {
-    margin-top: 5rem; /* Adjusted margin top */
-    padding: 0;
+    margin: 0;
     font-size: 2.25rem; /* Relative font size */
-    margin-right: 7rem;
+    margin-bottom: 0.5rem; /* Added margin bottom */
 }
 
-
-header h2{
+header h2 {
+    margin: 0;
     font-size: 1.4rem;
-    margin-right: 12rem;
+    margin-bottom: 0.5rem; /* Added margin bottom */
 }
 
 .bio-text {
-    max-width: 400px; /* Adjust the max-width as needed */
+    max-width: 50rem; /* Adjust the max-width of the container as needed */
     margin: 0 auto; /* Center the container horizontally */
 }
 
@@ -39,15 +41,26 @@ header h2{
     font-size: 0.8rem; /* Adjust the font size as needed */
     color: #ccc; /* Adjust the color to gray */
     text-align: left; /* Explicitly set left alignment */
+    max-width: 60%; /* Set maximum width for the text */
 }
+
+
 
 .navbar-left {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Pushes the icons to the far left */
-    position: absolute; /* Positioning for top left */
-    top: 2rem; /* Positioning for top left */
-    left: 8rem; /* Positioning for top left */
+    justify-content: flex-start;
+    margin-left: 2rem; /* Adjusted margin */
+    margin-bottom: 1rem; /* Adjusted margin */
+    margin-top: 2rem
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    margin-right: 2rem; /* Adjusted margin */
+    margin-bottom: 1rem; /* Adjusted margin */
 }
 
 /* Updated styles for the icon images */
@@ -56,12 +69,12 @@ header h2{
     height: 3rem; /* Adjusted height */
 }
 
+
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Center the navigation items horizontally */
 }
 
 nav ul li {
@@ -87,16 +100,12 @@ main {
 }
 
 .main-button-placement {
-    position: fixed; /* Fixed positioning so it stays in place even when scrolling */
     top: 2rem; /* Aligning the top edge of the container to the top of the screen */
     right: 8em; /* Aligning the right edge of the container to the right of the screen */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
 }
-
-
-
 
 /* Contact Button Styles */
 .contact-button {
@@ -122,7 +131,6 @@ main {
     z-index: -1;
 }
 
-
 .contact-button:hover::before {
     height: 100%;
 }
@@ -144,5 +152,3 @@ footer {
         font-size: 1.5rem; /* Relative font size */
     }
 }
-
-
