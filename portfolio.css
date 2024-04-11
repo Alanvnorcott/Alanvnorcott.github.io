@@ -5,60 +5,55 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #46211A;
+    background-color: #121212;
     color: #fff;
 }
 
 header {
-    background-color: #F1D3B2;
-    padding: 20px 0;
+    background-color: #121212;
+    padding: 2rem 0; /* Adjusted padding */
     text-align: center;
+    margin-right: 40rem;
+    margin-top: 7rem;
 }
 
 header h1 {
-    margin: 0;
+    margin-top: 5rem; /* Adjusted margin top */
     padding: 0;
     font-size: 2.25rem; /* Relative font size */
+    margin-right: 7rem;
 }
 
-/* Adjust the margin-right for .navbar-left */
+
+header h2{
+    font-size: 1.4rem;
+    margin-right: 12rem;
+}
+
+.bio-text {
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.bio-text p {
+    font-size: 0.8rem; /* Adjust the font size as needed */
+    color: #ccc; /* Adjust the color to gray */
+    text-align: left; /* Explicitly set left alignment */
+}
+
 .navbar-left {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Pushes the icons to the far left */
+    position: absolute; /* Positioning for top left */
+    top: 2rem; /* Positioning for top left */
+    left: 8rem; /* Positioning for top left */
 }
 
-.navbar-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Pushes the items to the far right */
-}
-
-
-/* Remove the margin-right for .navbar-left li */
-.navbar-left li {
-    margin-right: 10px; /* Add margin between items */
-}
-
-.navbar-left li:last-child {
-    margin-right: 0; /* Remove margin from last item */
-}
-
-.navbar-left li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header {
-    background-color: #F1D3B2;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 2.25rem; /* Relative font size */
+/* Updated styles for the icon images */
+.navbar-left img {
+    width: 3rem; /* Adjusted width */
+    height: 3rem; /* Adjusted height */
 }
 
 nav ul {
@@ -79,32 +74,29 @@ nav ul li a {
     font-weight: bold;
 }
 
-
-
 main {
     padding: 20px;
 }
 
 /* Hero Section Styles */
-.hero {
+#home {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.heading-section h2 {
-    margin-top: 20px; /* Add margin-top */
-    font-size: 3.75rem; /* Relative font size */
-    text-align: left;
-}
-
-.button-section {
-    margin-top: 20px;
-    display: flex; /* Change to flexbox */
     justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
+
+.main-button-placement {
+    position: fixed; /* Fixed positioning so it stays in place even when scrolling */
+    top: 2rem; /* Aligning the top edge of the container to the top of the screen */
+    right: 8em; /* Aligning the right edge of the container to the right of the screen */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+
 
 /* Contact Button Styles */
 .contact-button {
@@ -123,12 +115,13 @@ main {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% + 40px);
-    height: 0;
-    background-color: #F1D3B2;
-    border-radius: 10px;
+    height: 10%; /* Set initial height to 10% */
+    background-color: #fff;
+    border-radius: 25px;
     transition: height 0.3s;
     z-index: -1;
 }
+
 
 .contact-button:hover::before {
     height: 100%;
@@ -138,15 +131,9 @@ main {
     color: #000;
 }
 
-.github-icon img,
-.twitter-icon img {
-    width: 3rem; /* Relative width */
-    height: 3rem; /* Relative height */
-}
-
 /* Footer Styles */
 footer {
-    background-color: #F1D3B2;
+    background-color: #121212;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -157,3 +144,5 @@ footer {
         font-size: 1.5rem; /* Relative font size */
     }
 }
+
+
