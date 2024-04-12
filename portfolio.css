@@ -41,8 +41,23 @@ header h2 {
     font-size: 0.8rem; /* Adjust the font size as needed */
     color: #ccc; /* Adjust the color to gray */
     text-align: left; /* Explicitly set left alignment */
-    max-width: 60%; /* Set maximum width for the text */
+    max-width: 40%; /* Set maximum width for the text */
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .bio-text p {
+        max-width: 80%; /* Adjust maximum width for smaller screens */
+        margin: 0 auto; /* Center the text horizontally */
+    }
+
+    header h1,
+    header h2 {
+        margin-left: 0; /* Reset left margin */
+    }
+}
+
+
 
 
 
@@ -55,6 +70,28 @@ header h2 {
     margin-top: 2rem
 }
 
+.profile-picture {
+    width: 8rem; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-top: -75rem; /* Adjust the margin to position it higher on the page */
+    margin-left: -20rem;
+    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+@media screen and (max-width: 700px) {
+    .profile-picture {
+        margin-top: -100rem;
+        margin-right: -23rem;
+        width: 5rem;
+    }
+}
+
+.profile-picture:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a box shadow when hovering */
+}
+
+
+
 .navbar-right {
     display: flex;
     align-items: center;
@@ -63,10 +100,21 @@ header h2 {
     margin-bottom: 1rem; /* Adjusted margin */
 }
 
-/* Updated styles for the icon images */
+@media screen and (max-width: 700px) {
+    .navbar-right {
+        margin-top: -8rem
+    }
+}
+
 .navbar-left img {
     width: 3rem; /* Adjusted width */
     height: 3rem; /* Adjusted height */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transition for transform */
+}
+
+.navbar-left img:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Increased box shadow */
+    transform: scale(1.05); /* Added slight scale increase for shine effect */
 }
 
 
@@ -75,6 +123,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
 }
 
 nav ul li {
@@ -139,12 +194,58 @@ main {
     color: #000;
 }
 
+
+/* Styles for project sections */
+.project-section {
+    margin-top: -21.5rem;
+}
+
+.project-section article {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.project-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-section a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.project-section a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 700px) {
+    .project-section {
+        margin-top: -22rem; /* Adjusted margin-top */
+        margin-left: 80rem; /* Adjusted margin-left */
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .project-section {
+        /* Add styles for shorter screens here */
+        font-size: 0.8rem; /* Example: Decrease font size */
+        /* You can also add other styling adjustments here */
+    }
+}
 /* Footer Styles */
 footer {
     background-color: #121212;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 1px 0;
+    margin-top: 70rem
 }
 
 @media only screen and (max-width: 768px) {
@@ -152,3 +253,5 @@ footer {
         font-size: 1.5rem; /* Relative font size */
     }
 }
+
+
