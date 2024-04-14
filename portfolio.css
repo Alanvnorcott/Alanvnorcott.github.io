@@ -1,175 +1,65 @@
 /* portfolio.css */
 
-/* General Styles */
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #fff;
+    background-color: #121212; /* Updated background color */
+    color: #fff; /* Updated text color */
 }
 
-header {
-    background-color: #121212;
-    padding: 2rem 0; /* Adjusted padding */
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Adjusted layout to column */
-    align-items: flex-start; /* Adjusted layout */
-    margin: 7rem auto 0; /* Adjusted margin */
-    max-width: 50rem; /* Added max-width to prevent header from stretching too wide */
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.25rem; /* Relative font size */
-    margin-bottom: 0.5rem; /* Added margin bottom */
-}
-
-header h2 {
-    margin: 0;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem; /* Added margin bottom */
-}
-
-.bio-text {
-    max-width: 50rem; /* Adjust the max-width of the container as needed */
-    margin: 0 auto; /* Center the container horizontally */
-}
-
-.bio-text p {
-    font-size: 0.8rem; /* Adjust the font size as needed */
-    color: #ccc; /* Adjust the color to gray */
-    text-align: left; /* Explicitly set left alignment */
-    max-width: 40%; /* Set maximum width for the text */
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-    .bio-text p {
-        max-width: 80%; /* Adjust maximum width for smaller screens */
-        margin: 0 auto; /* Center the text horizontally */
-    }
-
-    header h1,
-    header h2 {
-        margin-left: 0; /* Reset left margin */
-    }
-}
-
-
-
-
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-left: 2rem; /* Adjusted margin */
-    margin-bottom: 1rem; /* Adjusted margin */
-    margin-top: 2rem
-}
-
-.profile-picture {
-    width: 8rem; /* Adjust the size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    margin-top: -75rem; /* Adjust the margin to position it higher on the page */
-    margin-left: -20rem;
-    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
-}
-
-@media screen and (max-width: 700px) {
-    .profile-picture {
-        margin-top: -100rem;
-        margin-right: -23rem;
-        width: 5rem;
-    }
-}
-
-.profile-picture:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a box shadow when hovering */
-}
-
-
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align items to the right */
-    margin-right: 2rem; /* Adjusted margin */
-    margin-bottom: 1rem; /* Adjusted margin */
-}
-
-@media screen and (max-width: 700px) {
-    .navbar-right {
-        margin-top: -8rem
-    }
-}
-
-.navbar-left img {
-    width: 3rem; /* Adjusted width */
-    height: 3rem; /* Adjusted height */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transition for transform */
-}
-
-.navbar-left img:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Increased box shadow */
-    transform: scale(1.05); /* Added slight scale increase for shine effect */
-}
-
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-@media screen and (max-width: 700px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-end;
-    }
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
+.container {
+    max-width: 960px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-/* Hero Section Styles */
-#home {
-    height: 100vh;
+.navbar-left {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
-.main-button-placement {
-    top: 2rem; /* Aligning the top edge of the container to the top of the screen */
-    right: 8em; /* Aligning the right edge of the container to the right of the screen */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+.navbar-right {
+    display: flex; /* Display navbar-right */
+    justify-content: flex-end; /* Align items to the right */
+    margin-bottom: 20px;
 }
 
-/* Contact Button Styles */
+.navbar-left ul,
+.navbar-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display lists side by side */
+}
+
+.navbar-right ul {
+    margin-right: 15px;
+}
+.github-icon img,
+.twitter-icon img {
+    width: 3rem; /* Adjust the width as needed */
+    height: 3rem; /* Adjust the height as needed */
+    margin-top: 3rem
+}
+
+.navbar-left li,
+.navbar-right li {
+    margin-right: 10px;
+}
+
 .contact-button {
     padding: 10px 20px;
     background-color: transparent;
     color: #fff;
     border: none;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s; /* Add transition for background-color */
     position: relative; /* Add position relative */
 }
 
@@ -195,64 +85,65 @@ main {
     color: #000;
 }
 
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-/* Styles for project sections */
+.bio-text {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px; /* Set a maximum width */
+    margin-left: auto; /* Center the bio text horizontally */
+    margin-right: auto;
+    color: #999999;
+}
+
+
+
+/* Projects section */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+
 .project-section {
-    margin-top: -21.5rem;
+    margin-bottom: 20px;
 }
 
 .project-section article {
-    padding: 1rem;
-    border-radius: 8px;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-section h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
 }
 
 .project-section p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
 .project-section a {
-    color: #fff;
+    color: #007bff;
     text-decoration: none;
-    font-size: 1rem;
 }
 
 .project-section a:hover {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 700px) {
-    .project-section {
-        margin-top: -22rem; /* Adjusted margin-top */
-        margin-left: 80rem; /* Adjusted margin-left */
-    }
-}
-
-@media screen and (max-height: 700px) {
-    .project-section {
-        /* Add styles for shorter screens here */
-        font-size: 0.8rem; /* Example: Decrease font size */
-        /* You can also add other styling adjustments here */
-    }
-}
-/* Footer Styles */
+/* Footer */
 footer {
-    background-color: #121212;
-    color: #fff;
     text-align: center;
-    padding: 1px 0;
-    margin-top: 70rem
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
 }
-
-@media only screen and (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem; /* Relative font size */
-    }
-}
-
 
