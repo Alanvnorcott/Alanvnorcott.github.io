@@ -46,8 +46,16 @@ body {
 .twitter-icon img {
     width: 3rem; /* Adjust the width as needed */
     height: 3rem; /* Adjust the height as needed */
-    margin-top: 3rem
+    margin-top: 3rem;
+    transition: transform 0.3s, filter 0.3s;
 }
+
+.github-icon img:hover,
+.twitter-icon img:hover {
+    transform: translateY(-5px); /* Raise the image up by 5 pixels */
+    filter: brightness(150%); /* Add shine effect by increasing brightness */
+}
+
 
 .navbar-left li,
 .navbar-right li {
