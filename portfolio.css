@@ -101,21 +101,23 @@ header {
 }
 
 
-
-/* Projects section */
+/* Adjusted Projects section styles */
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center items horizontally */
-    margin: 0 auto; /* Center the container horizontally */
+    justify-content: center;
+    align-items: center; /* Center items horizontally and vertically */
+    margin: 0 auto;
 }
 
-
 .project-section {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
     margin-bottom: 20px;
 }
 
 .project-section article {
+    flex: 1; /* Let the article take remaining space */
     background-color: #121212;
     padding: 20px;
     border-radius: 20px;
@@ -128,15 +130,22 @@ header {
 
 .project-section p {
     margin-bottom: 10px;
+    max-width: 400px;
+    color: #999999;
 }
 
 .project-section a {
-    color: #007bff;
+    color: #fff;
     text-decoration: none;
 }
 
 .project-section a:hover {
     text-decoration: underline;
+}
+
+.project-section img {
+    width: 100px;
+    margin-right: 100px; /* Add margin to the right of the image */
 }
 
 /* Footer */
