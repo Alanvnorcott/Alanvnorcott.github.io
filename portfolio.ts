@@ -12,7 +12,7 @@ function toggleProject(projectId: string): void {
             projectInfo.classList.add('hidden');
             setTimeout(() => {
                 projectInfo.style.display = 'none'; // Hide the project info after animation
-            }, 500); // Adjust based on your animation duration
+            }, 100); // Adjust based on your animation duration
         }
     }
 }
