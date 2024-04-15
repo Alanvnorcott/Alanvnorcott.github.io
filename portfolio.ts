@@ -1,11 +1,24 @@
 //portfolio.ts
 // Define the toggleProject function globally
-function toggleProject(projectId: string) {
+function toggleProject(projectId: string): void {
     const projectInfo: HTMLElement | null = document.getElementById(projectId);
     if (projectInfo) {
-        projectInfo.style.display = (projectInfo.style.display === 'none') ? 'block' : 'none';
+        if (projectInfo.classList.contains('hidden')) {
+            projectInfo.style.display = 'block'; // Show the project info
+            setTimeout(() => {
+                projectInfo.classList.remove('hidden');
+            }, 10); // Delay to ensure the display property is updated before removing 'hidden'
+        } else {
+            projectInfo.classList.add('hidden');
+            setTimeout(() => {
+                projectInfo.style.display = 'none'; // Hide the project info after animation
+            }, 500); // Adjust based on your animation duration
+        }
     }
 }
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Function to hide all sections except the target section

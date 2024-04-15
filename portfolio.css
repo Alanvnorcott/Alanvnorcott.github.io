@@ -118,6 +118,7 @@ header {
     margin: 0 auto;
 }
 
+/* Adjusted Projects section styles */
 .project-section {
     display: flex; /* Use flexbox to align items */
     align-items: center; /* Center items vertically */
@@ -130,6 +131,12 @@ header {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Add margin to create space between projects */
+    transition: transform 0.5s ease; /* Added transition for transform property */
+}
+
+.project-section article:hover {
+    transform: translateY(-5px); /* Apply transform on hover */
 }
 
 .project-section h1 {
@@ -165,8 +172,15 @@ header {
 }
 
 .project-info {
-    display: none;
+    display: none; /* Initially hide the project info */
+    transition: opacity 1.5s ease; /* Smooth transition for opacity */
 }
+
+.project-info.hidden {
+    display: block; /* Show the project info */
+    opacity: 0; /* Apply opacity transition when hidden */
+}
+
 
 .projects-page {
     display: flex;
@@ -175,11 +189,6 @@ header {
     align-items: center; /* Center vertically */
     height: 100vh; /* Set height to 100% of the viewport height */
 }
-.project {
-    width: calc(25% - 20px); /* Set width to 25% of the container width minus any spacing */
-    margin: 10px; /* Add spacing between the projects */
-}
-
 
 /* Define the keyframe animation for hovering effect */
 @keyframes hoverAnimation {
@@ -200,9 +209,19 @@ header {
 
 
 
+/* Media query for iPhone-sized screens */
+@media (max-width: 375px) { /* Adjust the max-width as needed for iPhone screens */
+    .projects-page .project-section {
+        display: flex;
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center projects horizontally */
+    }
 
-
-
+    .projects-page .project {
+        width: 90%; /* Set the width of each project to 90% */
+        margin-bottom: 20px; /* Add some spacing between projects */
+    }
+}
 
 /* Footer */
 footer {
@@ -211,4 +230,3 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #ccc;
 }
-
