@@ -1,4 +1,12 @@
 //portfolio.ts
+// Define the toggleProject function globally
+function toggleProject(projectId: string) {
+    const projectInfo: HTMLElement | null = document.getElementById(projectId);
+    if (projectInfo) {
+        projectInfo.style.display = (projectInfo.style.display === 'none') ? 'block' : 'none';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Function to hide all sections except the target section
     function hideSections(targetSection: HTMLElement) {
@@ -35,6 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the project elements
+    const projects: NodeListOf<HTMLElement> = document.querySelectorAll('.project');
 
+    // Add click event listeners to toggle project information
+    projects.forEach((project: HTMLElement) => {
+        project.addEventListener('click', () => {
+            const projectId: string | undefined = project.dataset.projectId;
+            if (projectId) {
+                toggleProject(projectId); // Call the globally defined toggleProject function
+            }
+        });
+    });
 
+    // Function to hide all project information initially
+    function hideProjectInfo() {
+        const projectInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.project-info');
+        projectInfo.forEach((info: HTMLElement) => {
+            info.style.display = 'none';
+        });
+    }
 
+    // Hide project information initially
+    hideProjectInfo();
+});

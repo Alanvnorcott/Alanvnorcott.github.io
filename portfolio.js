@@ -1,5 +1,12 @@
 "use strict";
 //portfolio.ts
+// Define the toggleProject function globally
+function toggleProject(projectId) {
+    var projectInfo = document.getElementById(projectId);
+    if (projectInfo) {
+        projectInfo.style.display = (projectInfo.style.display === 'none') ? 'block' : 'none';
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
     // Function to hide all sections except the target section
     function hideSections(targetSection) {
@@ -30,5 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'contact.html'; // Navigate to the contact page
         });
     }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the project elements
+    var projects = document.querySelectorAll('.project');
+    // Add click event listeners to toggle project information
+    projects.forEach(function (project) {
+        project.addEventListener('click', function () {
+            var projectId = project.dataset.projectId;
+            if (projectId) {
+                toggleProject(projectId); // Call the globally defined toggleProject function
+            }
+        });
+    });
+    // Function to hide all project information initially
+    function hideProjectInfo() {
+        var projectInfo = document.querySelectorAll('.project-info');
+        projectInfo.forEach(function (info) {
+            info.style.display = 'none';
+        });
+    }
+    // Hide project information initially
+    hideProjectInfo();
 });
 //# sourceMappingURL=portfolio.js.map

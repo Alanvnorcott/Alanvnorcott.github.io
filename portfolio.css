@@ -156,6 +156,54 @@ header {
     margin-right: 10px; /* Add margin to the right of the image */
 }
 
+/* portfolio.css */
+.icon-button {
+    background-color: transparent; /* Set button background to transparent */
+    border: none; /* Remove button border */
+    padding: 0; /* Remove button padding */
+    cursor: pointer; /* Change cursor to pointer when hovering over button */
+}
+
+.project-info {
+    display: none;
+}
+
+.projects-page {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Set height to 100% of the viewport height */
+}
+.project {
+    width: calc(25% - 20px); /* Set width to 25% of the container width minus any spacing */
+    margin: 10px; /* Add spacing between the projects */
+}
+
+
+/* Define the keyframe animation for hovering effect */
+@keyframes hoverAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.1); } /* Keep the scale at 1.1 at the end */
+}
+
+/* Apply the animation on hover and pause it when not hovered */
+.icon-button:hover {
+    animation: hoverAnimation 0.5s forwards; /* Play animation once and keep the final state */
+}
+
+.icon-button:not(:hover) {
+    transition: transform 0.5s ease; /* Smooth transition for scaling back */
+    transform: scale(1); /* Ensure button returns to normal size when not hovered */
+}
+
+
+
+
+
+
+
 /* Footer */
 footer {
     text-align: center;
