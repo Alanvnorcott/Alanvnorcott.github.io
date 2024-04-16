@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest"/>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="portfolio.css"> <!-- Assuming you have a stylesheet for styling -->
+    <style>
+        /* Hide contact info initially */
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+<!-- Navigation bar -->
+<nav class="navbar-right">
+    <ul>
+        <li><button class="contact-button" onclick="window.location.href='index.html';"> HOME</button></li>
+        <li><button class="contact-button" onclick="window.location.href='projects.html';"> PROJECTS</button></li>
+        <li><button class="contact-button" onclick="window.location.href='bio.html';"> BIO</button></li>
+    </ul>
+</nav>
+
+<!-- Main content -->
+<div class="container">
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+    <main>
+        <section class="project-section contact-section">
+            <img src="icons/linkedin_contact.png" alt="LinkedIn Icon" class="contact-icon icon-button" onclick="revealContactInfo(this)">
+            <p class="contact-info hidden"><a href="https://www.linkedin.com/in/alan-norcott-31161523b/">linkedin.com/in/alan-norcott</a></p>
+        </section>
+        <section class="project-section contact-section">
+            <img src="icons/twitter_contact.png" alt="Twitter Icon" class="contact-icon icon-button" onclick="revealContactInfo(this)">
+            <p class="contact-info hidden"><a href="https://twitter.com/Alanvnorcott">twitter.com/Alanvnorcott</a></p>
+        </section>
+        <section class="project-section contact-section">
+            <img src="icons/gmail.png" alt="Gmail Icon" class="contact-icon icon-button" onclick="revealContactInfo(this)">
+            <p class="contact-info hidden"><a href="mailto:Alanvnorcott@gmail.com">Alanvnorcott@gmail.com</a></p>
+        </section>
+        <section class="project-section contact-section">
+            <img src="icons/github_contact.png" alt="GitHub Icon" class="contact-icon icon-button" onclick="revealContactInfo(this)">
+            <p class="contact-info hidden"><a href="https://github.com/Alanvnorcott">github.com/Alanvnorcott</a></p>
+        </section>
+
+    </main>
+</div>
+<script src="portfolio.js"></script> <!-- Include the TypeScript file -->
 
 </body>
 </html>

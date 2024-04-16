@@ -1,6 +1,6 @@
 "use strict";
-//portfolio.ts
-// Define the toggleProject function globally
+// portfolio.ts -- TYPESCRIPT
+// Function to toggle project information visibility
 function toggleProject(projectId) {
     var projectInfo = document.getElementById(projectId);
     if (projectInfo) {
@@ -18,16 +18,60 @@ function toggleProject(projectId) {
         }
     }
 }
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to hide all sections except the target section
-    function hideSections(targetSection) {
-        var sections = document.querySelectorAll('main section:not(#home)');
-        sections.forEach(function (section) {
-            if (section !== targetSection) {
-                section.style.display = 'none';
+var body = document.body;
+var lastPanel = document.querySelector(".panels .panel:last-child");
+// Function to reveal or hide contact information with fade animation
+function revealContactInfo(iconElement) {
+    var textElement = iconElement.nextElementSibling;
+    if (textElement && textElement.classList.contains('contact-info')) {
+        if (textElement.classList.contains('hidden')) {
+            // Reveal the contact information
+            textElement.classList.remove('hidden');
+            textElement.style.opacity = '0'; // Set initial opacity to 0 (invisible)
+            var opacity_1 = 0;
+            var intervalId_1 = setInterval(function () {
+                opacity_1 += 0.1; // Increase opacity gradually
+                textElement.style.opacity = opacity_1.toString();
+                if (opacity_1 >= 1) {
+                    clearInterval(intervalId_1); // Stop animation when opacity reaches 1
+                }
+            }, 50);
+        }
+        else {
+            // Check if the element is visible before hiding it
+            if (textElement.style.opacity === '1') {
+                // Hide the contact information
+                var opacity_2 = 1;
+                var intervalId_2 = setInterval(function () {
+                    opacity_2 -= 0.1; // Decrease opacity gradually
+                    textElement.style.opacity = opacity_2.toString();
+                    if (opacity_2 <= 0) {
+                        clearInterval(intervalId_2); // Stop animation when opacity reaches 0
+                        textElement.classList.add('hidden'); // Hide the element after animation
+                    }
+                }, 50);
             }
-        });
+        }
     }
+}
+// Function to hide sections except the target section
+function hideSections(targetSection) {
+    var sections = document.querySelectorAll('main section:not(#home)');
+    sections.forEach(function (section) {
+        if (section !== targetSection) {
+            section.style.display = 'none';
+        }
+    });
+}
+// Function to hide project information initially
+function hideProjectInfo() {
+    var projectInfo = document.querySelectorAll('.project-info');
+    projectInfo.forEach(function (info) {
+        info.style.display = 'none';
+    });
+}
+// Event listener when the DOM content is loaded
+document.addEventListener('DOMContentLoaded', function () {
     // Get the buttons for navigation
     var aboutButton = document.getElementById('about-button');
     var projectsButton = document.getElementById('projects-button');
@@ -46,10 +90,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactButton) {
         contactButton.addEventListener('click', function () {
             window.location.href = 'contact.html'; // Navigate to the contact page
+            hideSections(document.querySelector('main section.contact-section')); // Hide other sections
         });
     }
-});
-document.addEventListener('DOMContentLoaded', function () {
+    // Get the contact icon elements
+    var contactIcons = document.querySelectorAll('.contact-icon');
+    // Add click event listeners to contact icons
+    contactIcons.forEach(function (icon) {
+        var textElement = icon.nextElementSibling;
+        if (textElement && textElement.classList.contains('contact-info')) {
+            icon.addEventListener('click', function () {
+                revealContactInfo(icon); // Call the typing animation function when clicked
+            });
+        }
+    });
     // Get the project elements
     var projects = document.querySelectorAll('.project');
     // Add click event listeners to toggle project information
@@ -61,13 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    // Function to hide all project information initially
-    function hideProjectInfo() {
-        var projectInfo = document.querySelectorAll('.project-info');
-        projectInfo.forEach(function (info) {
-            info.style.display = 'none';
-        });
-    }
     // Hide project information initially
     hideProjectInfo();
 });

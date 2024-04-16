@@ -13,11 +13,13 @@ body {
     color: #fff; /* Updated text color */
 }
 
+
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
+
 
 .navbar-left {
     display: flex;
@@ -99,6 +101,9 @@ header {
     margin-bottom: 20px;
 }
 
+h1, h2 {
+    color: #fff; /* Make headers white */
+}
 .bio-text {
     margin-top: 20px;
     text-align: left;
@@ -222,6 +227,81 @@ header {
         margin-bottom: 20px; /* Add some spacing between projects */
     }
 }
+
+.contact-info {
+    text-decoration: underline; /* Add underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+/* Apply the animation on hover and pause it when not hovered */
+.pdf-button:hover {
+    animation: hoverAnimation 0.5s forwards; /* Play animation once and keep the final state */
+}
+
+.pdf-button:not(:hover) {
+    transition: transform 0.5s ease; /* Smooth transition for scaling back */
+    transform: scale(1); /* Ensure button returns to normal size when not hovered */
+}
+
+
+.project-section.bio-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-section.bio-section .pdf-button {
+    margin: 20px; /* Increase margin to lower the icons and add space */
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pdf-button:hover .tooltip,
+.project:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+.pdf-button {
+    display: flex; /* Use flexbox */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bio-section {
+    flex-basis: 20%; /* Set the initial width of each section */
+    margin-right: 20px; /* Add margin to create space between bio sections */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .bio-section {
+        flex-basis: 40%; /* Adjust width for smaller screens */
+    }
+}
+
+
+
 
 /* Footer */
 footer {
