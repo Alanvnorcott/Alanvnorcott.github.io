@@ -1,6 +1,5 @@
 /* portfolio.css */
 
-/* Reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +8,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000; /* Updated background color */
-    color: #fff; /* Updated text color */
+    background-color: #000000;
+    color: #fff;
 }
 
 
@@ -28,8 +27,8 @@ body {
 }
 
 .navbar-right {
-    display: flex; /* Display navbar-right */
-    justify-content: flex-end; /* Align items to the right */
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 20px;
 }
 
@@ -38,7 +37,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Display lists side by side */
+    display: flex;
 }
 
 .navbar-right ul {
@@ -46,16 +45,16 @@ body {
 }
 .github-icon img,
 .twitter-icon img {
-    width: 3rem; /* Adjust the width as needed */
-    height: 3rem; /* Adjust the height as needed */
+    width: 3rem;
+    height: 3rem;
     margin-top: 3rem;
     transition: transform 0.3s, filter 0.3s;
 }
 
 .github-icon img:hover,
 .twitter-icon img:hover {
-    transform: translateY(-5px); /* Raise the image up by 5 pixels */
-    filter: brightness(150%); /* Add shine effect by increasing brightness */
+    transform: translateY(-5px);
+    filter: brightness(150%);
 }
 
 
@@ -69,8 +68,8 @@ body {
     background-color: transparent;
     color: #fff;
     border: none;
-    transition: color 0.3s, background-color 0.3s; /* Add transition for background-color */
-    position: relative; /* Add position relative */
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
     cursor: pointer;
 }
 
@@ -81,7 +80,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% + 40px);
-    height: 10%; /* Set initial height to 10% */
+    height: 10%;
     background-color: #fff;
     border-radius: 25px;
     transition: height 0.3s;
@@ -96,53 +95,53 @@ body {
     color: #000;
 }
 
-/* Header */
+
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
 h1, h2 {
-    color: #fff; /* Make headers white */
+    color: #fff;
 }
 .bio-text {
     margin-top: 20px;
     text-align: left;
-    max-width: 400px; /* Set a maximum width */
-    margin-left: auto; /* Center the bio text horizontally */
+    max-width: 400px;
+    margin-left: auto;
     margin-right: auto;
     color: #999999;
 }
 
 
-/* Adjusted Projects section styles */
+
 .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center items horizontally and vertically */
+    align-items: center;
     margin: 0 auto;
 }
 
 /* Adjusted Projects section styles */
 .project-section {
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
 
 .project-section article {
-    flex: 1; /* Let the article take remaining space */
+    flex: 1;
     background-color: #000000;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-right: 20px; /* Add margin to create space between projects */
-    transition: transform 0.5s ease; /* Added transition for transform property */
+    margin-right: 20px;
+    transition: transform 0.5s ease;
 }
 
 .project-section article:hover {
-    transform: translateY(-5px); /* Apply transform on hover */
+    transform: translateY(-5px);
 }
 
 .project-section h1 {
@@ -166,25 +165,25 @@ h1, h2 {
 
 .project-section img {
     width: 100px;
-    margin-right: 10px; /* Add margin to the right of the image */
+    margin-right: 10px;
 }
 
-/* portfolio.css */
+
 .icon-button {
-    background-color: transparent; /* Set button background to transparent */
-    border: none; /* Remove button border */
-    padding: 0; /* Remove button padding */
-    cursor: pointer; /* Change cursor to pointer when hovering over button */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .project-info {
-    display: none; /* Initially hide the project info */
-    transition: opacity 1.5s ease; /* Smooth transition for opacity */
+    display: none;
+    transition: opacity 1.5s ease;
 }
 
 .project-info.hidden {
-    display: block; /* Show the project info */
-    opacity: 0; /* Apply opacity transition when hidden */
+    display: block;
+    opacity: 0;
 }
 
 
@@ -196,36 +195,36 @@ h1, h2 {
     height: 100vh;
 }
 
-/* Define the keyframe animation for hovering effect */
+
 @keyframes hoverAnimation {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
-    100% { transform: scale(1.1); } /* Keep the scale at 1.1 at the end */
+    100% { transform: scale(1.1); }
 }
 
-/* Apply the animation on hover and pause it when not hovered */
+
 .icon-button:hover {
-    animation: hoverAnimation 0.5s forwards; /* Play animation once and keep the final state */
+    animation: hoverAnimation 0.5s forwards;
 }
 
 .icon-button:not(:hover) {
-    transition: transform 0.5s ease; /* Smooth transition for scaling back */
-    transform: scale(1); /* Ensure button returns to normal size when not hovered */
+    transition: transform 0.5s ease;
+    transform: scale(1);
 }
 
 
 
-/* Media query for iPhone-sized screens */
-@media (max-width: 375px) { /* Adjust the max-width as needed for iPhone screens */
+
+@media (max-width: 375px) {
     .projects-page .project-section {
         display: flex;
-        flex-direction: column; /* Stack projects vertically */
-        align-items: center; /* Center projects horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
     .projects-page .project {
-        width: 90%; /* Set the width of each project to 90% */
-        margin-bottom: 20px; /* Add some spacing between projects */
+        width: 90%;
+        margin-bottom: 20px;
     }
 }
 
@@ -236,19 +235,19 @@ h1, h2 {
     cursor: pointer;
 }
 
-.contact-icon.linkedin-icon { /* LinkedIn icon */
+.contact-icon.linkedin-icon { /
     background-image: url("icons/linkedin_contact.png");
 }
 
-.contact-icon.twitter-icon { /* Twitter icon */
+.contact-icon.twitter-icon {
     background-image: url("icons/twitter_contact.png");
 }
 
-.contact-icon.gmail-icon { /* Gmail icon */
+.contact-icon.gmail-icon {
     background-image: url("icons/gmail.png");
 }
 
-.contact-icon.github-icon { /* GitHub icon */
+.contact-icon.github-icon {
     background-image: url("icons/github_contact.png");
 }
 
@@ -269,8 +268,8 @@ h1, h2 {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% + 20px);
-    height: 0; /* Set initial height to 10% */
-    background-color: #2a7ae2; /* LinkedIn color */
+    height: 0;
+    background-color: #2a7ae2;
     border-radius: 25px;
     transition: height 0.3s;
     z-index: -1;
@@ -285,14 +284,14 @@ h1, h2 {
 }
 
 
-/* Apply the animation on hover and pause it when not hovered */
+
 .pdf-button:hover {
-    animation: hoverAnimation 0.5s forwards; /* Play animation once and keep the final state */
+    animation: hoverAnimation 0.5s forwards;
 }
 
 .pdf-button:not(:hover) {
-    transition: transform 0.5s ease; /* Smooth transition for scaling back */
-    transform: scale(1); /* Ensure button returns to normal size when not hovered */
+    transition: transform 0.5s ease;
+    transform: scale(1);
 }
 
 
@@ -304,7 +303,7 @@ h1, h2 {
 }
 
 .project-section.bio-section .pdf-button {
-    margin: 20px; /* Increase margin to lower the icons and add space */
+    margin: 20px;
 }
 
 .tooltip {
@@ -333,21 +332,21 @@ h1, h2 {
 
 
 .pdf-button {
-    display: flex; /* Use flexbox */
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .bio-section {
-    flex-basis: 20%; /* Set the initial width of each section */
-    margin-right: 20px; /* Add margin to create space between bio sections */
+    flex-basis: 20%;
+    margin-right: 20px;
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
     .bio-section {
-        flex-basis: 40%; /* Adjust width for smaller screens */
+        flex-basis: 40%;
     }
 }
 
@@ -356,10 +355,10 @@ h1, h2 {
         transform: translate(0, 0);
     }
     49.99% {
-        transform: translate(100vw, -100vh); /* Move to top right */
+        transform: translate(100vw, -100vh);
     }
     50% {
-        transform: translate(-100vw, 100vh); /* Move to bottom left */
+        transform: translate(-100vw, 100vh);
     }
     100% {
         transform: translate(0, 0);
@@ -372,7 +371,7 @@ h1, h2 {
 .paper-airplane {
     margin-top: 100px;
     position: fixed;
-    animation: none; /* Initially disable animation */
+    animation: none;
 }
 
 
@@ -383,69 +382,43 @@ h1, h2 {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 9999; /* Ensure it's above other content */
+    z-index: 9999;
 }
 
 .particle {
     position: absolute;
-    background-color: #fff; /* Color of the particles */
+    background-color: #fff;
     border-radius: 50%;
     pointer-events: none;
-    animation: particle-fall linear infinite; /* Apply the particle animation */
+    animation: particle-fall linear infinite;
 }
 
 @keyframes particle-fall {
     0% {
         transform: translateY(-100vh) translateX(calc(100vw * var(--x)));
-        opacity: 0; /* Start off transparent */
+        opacity: 0;
     }
     100% {
         transform: translateY(100vh) translateX(calc(100vw * var(--x)));
-        opacity: 1; /* Fade in as they fall */
+        opacity: 1;
     }
 }
 
-.memory-game {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Make the game board take up the entire viewport height */
+
+
+.neonText {
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 80%; /* Adjust the width of the card container */
-    max-width: 800px; /* Set a maximum width for larger screens */
-}
-
-.card {
-    width: 150px; /* Increase the width of each card */
-    height: 150px; /* Adjust the height of each card */
-    background-color: #ddd; /* Card background color */
-    border: 2px solid #fff; /* Card border */
-    margin: 10px; /* Adjust margin for spacing between cards */
-    font-size: 24px;
-    text-align: center;
-    line-height: 150px; /* Vertical centering */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.card:hover {
-    background-color: #ccc; /* Lighter background color on hover */
-}
-
-.card.matched {
-    background-color: #8bc34a; /* Matched card color */
-    cursor: default; /* Disable cursor for matched cards */
-}
-
-
-
-/* Footer */
 footer {
     text-align: center;
     margin-top: 20px;

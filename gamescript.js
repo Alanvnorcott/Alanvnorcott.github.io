@@ -693,7 +693,7 @@ function drawGame(resized) {
 
 function drawStartScreen() {
     fillCenteredText("Space Invaders", CANVAS_WIDTH/2, CANVAS_HEIGHT/2.75, '#FFFFFF', 36);
-    fillBlinkingText("Press enter to play!", CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 500, '#FFFFFF', 36);
+    fillBlinkingText("Press enter to play! (COMPUTER ONLY)", CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 500, '#FFFFFF', 36);
 }
 
 function animate() {

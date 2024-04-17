@@ -14,7 +14,7 @@ function toggleProject(projectId) {
             projectInfo.classList.add('hidden');
             setTimeout(function () {
                 projectInfo.style.display = 'none'; // Hide the project info after animation
-            }, 100); // Adjust based on your animation duration
+            }, 100);
         }
     }
 }
@@ -60,7 +60,7 @@ function revealContactInfo(iconElement) {
                 opacity_1 += 0.1; // Increase opacity gradually
                 textElement.style.opacity = opacity_1.toString();
                 if (opacity_1 >= 1) {
-                    clearInterval(intervalId_1); // Stop animation when opacity reaches 1
+                    clearInterval(intervalId_1);
                 }
             }, 50);
         }
@@ -97,21 +97,19 @@ function hideProjectInfo() {
         info.style.display = 'none';
     });
 }
-// Event listener when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Get the buttons for navigation
     var aboutButton = document.getElementById('about-button');
     var projectsButton = document.getElementById('projects-button');
     var contactButton = document.getElementById('contact-button');
-    // Add click event listeners to the buttons
     if (aboutButton) {
         aboutButton.addEventListener('click', function () {
-            window.location.href = 'about.html'; // Navigate to the about page
+            window.location.href = 'about.html';
         });
     }
     if (projectsButton) {
         projectsButton.addEventListener('click', function () {
-            window.location.href = 'projects.html'; // Navigate to the projects page
+            window.location.href = 'projects.html';
         });
     }
     if (contactButton) {

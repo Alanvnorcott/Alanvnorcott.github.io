@@ -14,7 +14,7 @@ function toggleProject(projectId: string): void {
             projectInfo.classList.add('hidden');
             setTimeout(() => {
                 projectInfo.style.display = 'none'; // Hide the project info after animation
-            }, 100); // Adjust based on your animation duration
+            }, 100);
         }
     }
 }
@@ -73,7 +73,7 @@ function revealContactInfo(iconElement: HTMLElement): void {
                 opacity += 0.1; // Increase opacity gradually
                 textElement.style.opacity = opacity.toString();
                 if (opacity >= 1) {
-                    clearInterval(intervalId); // Stop animation when opacity reaches 1
+                    clearInterval(intervalId);
                 }
             }, 50);
         } else {
@@ -95,9 +95,6 @@ function revealContactInfo(iconElement: HTMLElement): void {
 }
 
 
-
-
-
 // Function to hide sections except the target section
 function hideSections(targetSection: HTMLElement): void {
     const sections: NodeListOf<HTMLElement> = document.querySelectorAll('main section:not(#home)');
@@ -116,23 +113,23 @@ function hideProjectInfo(): void {
     });
 }
 
-// Event listener when the DOM content is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
     // Get the buttons for navigation
     const aboutButton: HTMLElement | null = document.getElementById('about-button');
     const projectsButton: HTMLElement | null = document.getElementById('projects-button');
     const contactButton: HTMLElement | null = document.getElementById('contact-button');
 
-    // Add click event listeners to the buttons
+
     if (aboutButton) {
         aboutButton.addEventListener('click', () => {
-            window.location.href = 'about.html'; // Navigate to the about page
+            window.location.href = 'about.html';
         });
     }
 
     if (projectsButton) {
         projectsButton.addEventListener('click', () => {
-            window.location.href = 'projects.html'; // Navigate to the projects page
+            window.location.href = 'projects.html';
         });
     }
 
