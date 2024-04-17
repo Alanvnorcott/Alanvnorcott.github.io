@@ -142,6 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
             hideSections(document.querySelector('main section.contact-section') as HTMLElement); // Hide other sections
         });
     }
+    if (projectsButton) {
+        projectsButton.addEventListener('click', () => {
+            window.location.href = 'game.html'; // Navigate to the projects page
+        });
+    }
 
     // Get the contact icon elements
     const contactIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.contact-icon');

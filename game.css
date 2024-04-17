@@ -1,0 +1,70 @@
+body, html {
+    background-color: #222;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    image-rendering: auto; /* Replace optimizeSpeed or optimizeQuality with a valid value */
+}
+
+.navbar-left,
+.navbar-right {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.navbar-left {
+    left: 20px;
+    top: 20px;
+}
+
+.navbar-right {
+    right: 20px;
+    top: 20px;
+}
+
+.navbar-left li,
+.navbar-right li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.contact-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for smoother animation */
+}
+
+.contact-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Scale up the button slightly on hover */
+}
+
+.exit-button {
+    background-color: #f44336; /* Red color for exit button */
+}
+
+.exit-button:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+    transform: scale(1.05); /* Scale up the button slightly on hover */
+}

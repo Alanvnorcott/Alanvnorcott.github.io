@@ -120,6 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
             hideSections(document.querySelector('main section.contact-section')); // Hide other sections
         });
     }
+    if (projectsButton) {
+        projectsButton.addEventListener('click', function () {
+            window.location.href = 'game.html'; // Navigate to the projects page
+        });
+    }
     // Get the contact icon elements
     var contactIcons = document.querySelectorAll('.contact-icon');
     // Add click event listeners to contact icons

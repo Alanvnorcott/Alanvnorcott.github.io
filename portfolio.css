@@ -405,52 +405,45 @@ h1, h2 {
     }
 }
 
-.contact-form-section {
-    margin-top: 40px;
+.memory-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the game board take up the entire viewport height */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Adjust the width of the card container */
+    max-width: 800px; /* Set a maximum width for larger screens */
+}
+
+.card {
+    width: 150px; /* Increase the width of each card */
+    height: 150px; /* Adjust the height of each card */
+    background-color: #ddd; /* Card background color */
+    border: 2px solid #fff; /* Card border */
+    margin: 10px; /* Adjust margin for spacing between cards */
+    font-size: 24px;
     text-align: center;
-}
-
-.contact-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #fff;
-}
-
-.contact-form textarea {
-    height: 150px;
-}
-
-.contact-form button {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
+    line-height: 150px; /* Vertical centering */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.contact-form button:hover {
-    background-color: #000;
-    color: #fff;
+.card:hover {
+    background-color: #ccc; /* Lighter background color on hover */
 }
+
+.card.matched {
+    background-color: #8bc34a; /* Matched card color */
+    cursor: default; /* Disable cursor for matched cards */
+}
+
+
 
 /* Footer */
 footer {
@@ -459,3 +452,5 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #ccc;
 }
+
+
