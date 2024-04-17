@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Updated background color */
+    background-color: #000000; /* Updated background color */
     color: #fff; /* Updated text color */
 }
 
@@ -133,7 +133,7 @@ h1, h2 {
 
 .project-section article {
     flex: 1; /* Let the article take remaining space */
-    background-color: #121212;
+    background-color: #000000;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -405,6 +405,52 @@ h1, h2 {
     }
 }
 
+.contact-form-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #000;
+    color: #fff;
+}
 
 /* Footer */
 footer {

@@ -31,9 +31,11 @@
 
 <!-- Main content -->
 <div class="container">
-    <header>
-        <h1>Contact Me</h1>
-    </header>
+    <section class="bio-text">
+        <h1>Contact me</h1>
+        <p>Feel free to reach out to me via any of my socials linked below.</p>
+    </section>
+
     <main>
         <section class="project-section contact-section">
             <img src="icons/linkedin_contact.png" alt="LinkedIn Icon" class="contact-icon icon-button" onclick="revealContactInfo(this)">
@@ -55,6 +57,21 @@
             <img src="icons/plane.png" alt="Paper Airplane Icon" class="contact-icon icon-button paper-airplane" onclick="flyPaperAirplane()">
             <!-- Add any additional content here if needed -->
         </section>
+
+        <section class="contact-form-section">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="post" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+
 
 
     </main>
