@@ -18,8 +18,35 @@ function toggleProject(projectId) {
         }
     }
 }
-var body = document.body;
-var lastPanel = document.querySelector(".panels .panel:last-child");
+function flyPaperAirplane() {
+    var airplane = document.querySelector('.paper-airplane');
+    if (airplane) {
+        // Adjust the animation duration (e.g., 8 seconds)
+        var animationDuration = 8; // in seconds
+        // Enable animation with adjusted duration
+        airplane.style.animation = "glide ".concat(animationDuration, "s forwards");
+        // After animation completes, reset position
+        setTimeout(function () {
+            if (airplane) {
+                airplane.style.animation = 'none'; // Disable animation
+                airplane.style.transform = 'translate(0, 0)'; // Reset position
+            }
+        }, animationDuration * 1000); // Convert animation duration to milliseconds
+    }
+}
+// Generate random particles
+var particleContainer = document.querySelector('.particles');
+for (var i = 0; i < 50; i++) {
+    var particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.setProperty('--x', Math.random().toString()); // Randomize horizontal position
+    particle.style.animationDuration = "".concat(Math.random() * 3 + 5, "s"); // Randomize falling speed
+    particle.style.width = "".concat(Math.random() * 4 + 1, "px"); // Randomize particle size
+    particle.style.height = particle.style.width; // Keep particle proportions
+    particle.style.top = "".concat(Math.random() * 100, "vh"); // Randomize vertical position
+    particle.style.left = "".concat(Math.random() * 100, "vw"); // Randomize horizontal position
+    particleContainer.appendChild(particle);
+}
 // Function to reveal or hide contact information with fade animation
 function revealContactInfo(iconElement) {
     var textElement = iconElement.nextElementSibling;

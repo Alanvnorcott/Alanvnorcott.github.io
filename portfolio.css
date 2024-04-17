@@ -71,6 +71,7 @@ body {
     border: none;
     transition: color 0.3s, background-color 0.3s; /* Add transition for background-color */
     position: relative; /* Add position relative */
+    cursor: pointer;
 }
 
 .contact-button::before {
@@ -189,10 +190,10 @@ h1, h2 {
 
 .projects-page {
     display: flex;
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Set height to 100% of the viewport height */
+    align-items: center;
+    height: 100vh;
 }
 
 /* Define the keyframe animation for hovering effect */
@@ -228,9 +229,59 @@ h1, h2 {
     }
 }
 
+.contact-icon {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.contact-icon.linkedin-icon { /* LinkedIn icon */
+    background-image: url("icons/linkedin_contact.png");
+}
+
+.contact-icon.twitter-icon { /* Twitter icon */
+    background-image: url("icons/twitter_contact.png");
+}
+
+.contact-icon.gmail-icon { /* Gmail icon */
+    background-image: url("icons/gmail.png");
+}
+
+.contact-icon.github-icon { /* GitHub icon */
+    background-image: url("icons/github_contact.png");
+}
+
 .contact-info {
-    text-decoration: underline; /* Add underline */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 20px);
+    height: 0; /* Set initial height to 10% */
+    background-color: #2a7ae2; /* LinkedIn color */
+    border-radius: 25px;
+    transition: height 0.3s;
+    z-index: -1;
+}
+
+.contact-info:hover::before {
+    height: 100%;
+}
+
+.contact-info:hover {
+    color: #000;
 }
 
 
@@ -300,7 +351,59 @@ h1, h2 {
     }
 }
 
+@keyframes glide {
+    0% {
+        transform: translate(0, 0);
+    }
+    49.99% {
+        transform: translate(100vw, -100vh); /* Move to top right */
+    }
+    50% {
+        transform: translate(-100vw, 100vh); /* Move to bottom left */
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 
+
+
+
+.paper-airplane {
+    margin-top: 100px;
+    position: fixed;
+    animation: none; /* Initially disable animation */
+}
+
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+.particle {
+    position: absolute;
+    background-color: #fff; /* Color of the particles */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-fall linear infinite; /* Apply the particle animation */
+}
+
+@keyframes particle-fall {
+    0% {
+        transform: translateY(-100vh) translateX(calc(100vw * var(--x)));
+        opacity: 0; /* Start off transparent */
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(100vw * var(--x)));
+        opacity: 1; /* Fade in as they fall */
+    }
+}
 
 
 /* Footer */

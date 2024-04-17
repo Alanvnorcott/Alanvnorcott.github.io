@@ -20,8 +20,43 @@ function toggleProject(projectId: string): void {
 }
 
 
-const body = document.body;
-const lastPanel = document.querySelector(".panels .panel:last-child");
+function flyPaperAirplane(): void {
+    const airplane: HTMLElement | null = document.querySelector('.paper-airplane');
+
+    if (airplane) {
+        // Adjust the animation duration (e.g., 8 seconds)
+        const animationDuration = 8; // in seconds
+
+        // Enable animation with adjusted duration
+        airplane.style.animation = `glide ${animationDuration}s forwards`;
+
+        // After animation completes, reset position
+        setTimeout(() => {
+            if (airplane) {
+                airplane.style.animation = 'none'; // Disable animation
+                airplane.style.transform = 'translate(0, 0)'; // Reset position
+            }
+        }, animationDuration * 1000); // Convert animation duration to milliseconds
+    }
+}
+
+
+// Generate random particles
+const particleContainer = document.querySelector('.particles') as HTMLElement;
+
+for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.setProperty('--x', Math.random().toString()); // Randomize horizontal position
+    particle.style.animationDuration = `${Math.random() * 3 + 5}s`; // Randomize falling speed
+    particle.style.width = `${Math.random() * 4 + 1}px`; // Randomize particle size
+    particle.style.height = particle.style.width; // Keep particle proportions
+    particle.style.top = `${Math.random() * 100}vh`; // Randomize vertical position
+    particle.style.left = `${Math.random() * 100}vw`; // Randomize horizontal position
+    particleContainer.appendChild(particle);
+}
+
+
 
 
 // Function to reveal or hide contact information with fade animation
@@ -137,3 +172,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hide project information initially
     hideProjectInfo();
 });
+
+

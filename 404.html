@@ -4,6 +4,7 @@ layout: default
 ---
 
 <style type="text/css" media="screen">
+  /* Additions for 404 page */
   .container {
     margin: 10px auto;
     max-width: 600px;
@@ -14,12 +15,26 @@ layout: default
     font-size: 4em;
     line-height: 1;
     letter-spacing: -1px;
+    color: #ff5733; /* Unique color for 404 title */
+  }
+  .sad-face {
+    font-size: 5em;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #888; /* Adjusted text color */
   }
 </style>
 
 <div class="container">
+  <div class="sad-face">:(</div>
   <h1>404</h1>
 
   <p><strong>Uh oh...</strong></p>
-  <p>The requested page could not be found.</p>
+  <p>The requested page could not be found. I'm not sure where it went...</p>
 </div>
+
+<!-- Importing portfolio.css -->
+<link rel="stylesheet" type="text/css" href="/path/to/portfolio.css">
