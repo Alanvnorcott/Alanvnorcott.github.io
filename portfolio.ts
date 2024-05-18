@@ -67,22 +67,20 @@ function revealContactInfo(iconElement: HTMLElement): void {
         if (textElement.classList.contains('hidden')) {
             // Reveal the contact information
             textElement.classList.remove('hidden');
-            textElement.style.opacity = '0'; // Set initial opacity to 0 (invisible)
+            textElement.style.opacity = '0';
             let opacity = 0;
             const intervalId = setInterval(() => {
-                opacity += 0.1; // Increase opacity gradually
+                opacity += 0.1;
                 textElement.style.opacity = opacity.toString();
                 if (opacity >= 1) {
                     clearInterval(intervalId);
                 }
             }, 50);
         } else {
-            // Check if the element is visible before hiding it
             if (textElement.style.opacity === '1') {
-                // Hide the contact information
                 let opacity = 1;
                 const intervalId = setInterval(() => {
-                    opacity -= 0.1; // Decrease opacity gradually
+                    opacity -= 0.1;
                     textElement.style.opacity = opacity.toString();
                     if (opacity <= 0) {
                         clearInterval(intervalId); // Stop animation when opacity reaches 0
@@ -135,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactButton) {
         contactButton.addEventListener('click', () => {
-            window.location.href = 'contact.html'; // Navigate to the contact page
+            window.location.href = 'contact.html';
             hideSections(document.querySelector('main section.contact-section') as HTMLElement); // Hide other sections
         });
     }
     if (projectsButton) {
         projectsButton.addEventListener('click', () => {
-            window.location.href = 'game.html'; // Navigate to the projects page
+            window.location.href = 'game.html';
         });
     }
 
@@ -153,25 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const textElement = icon.nextElementSibling as HTMLElement;
         if (textElement && textElement.classList.contains('contact-info')) {
             icon.addEventListener('click', () => {
-                revealContactInfo(icon); // Call the typing animation function when clicked
+                revealContactInfo(icon);
             });
         }
     });
 
-    // Get the project elements
-    const projects: NodeListOf<HTMLElement> = document.querySelectorAll('.project');
 
-    // Add click event listeners to toggle project information
+    const projects: NodeListOf<HTMLElement> = document.querySelectorAll('.project');
     projects.forEach((project: HTMLElement) => {
         project.addEventListener('click', () => {
             const projectId: string | undefined = project.dataset.projectId;
             if (projectId) {
-                toggleProject(projectId); // Call the globally defined toggleProject function
+                toggleProject(projectId);
             }
         });
     });
-
-    // Hide project information initially
     hideProjectInfo();
 });
 
